@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
+</head>
+
+<body>
+    <div class="navbar">
+       <a href="/" class="navbar-brand">HelpFor9</a>
+       <a href="{% url 'faculties' %}" class="navbar-item">Факультативы</a>
+       <a href="{% url 'calculator' %}" class="navbar-item">Калькулятор среднего балла</a>
+       <a href="{% url 'info' %}" class="navbar-item">Информация о направлениях</a>
+       <a href="{% url 'calendar' %}" class="navbar-item">Календарь событий</a>
+    </div>
+  
+    <div class="body-content">
+{% block content %}{% endblock %}
+        <hr/>
+        <footer>
+            <p>&copy; 2019</p>
+        </footer>
+    </div>
+</body>
+</html>
